@@ -1,7 +1,7 @@
 import express from "express";
 import path from 'path'
-import userRouter from "./routes/userRouter.js";
-import hostRouter from "./routes/hostRouter.js";
+import storeRouter from "./routes/store.router.js";
+import hostRouter from "./routes/host.router.js";
 import rootDir from './utils/pathUtil.js'
 import { Page404 } from "./controllers/404.js";
 const app = express();
@@ -15,7 +15,7 @@ app.use(express.static(path.join(rootDir, 'view')))
 app.use(express.urlencoded());
 // Express se router method nikala hai use kiye hai
 // .use middlewares ke liye use hota hai 
-app.use(userRouter);
+app.use(storeRouter);
 app.use("/host",hostRouter);
 
 app.use(Page404)

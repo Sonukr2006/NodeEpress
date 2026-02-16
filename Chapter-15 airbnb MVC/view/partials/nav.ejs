@@ -1,10 +1,26 @@
 <header>
   <nav class="bg-amber-300">
     <ul class="flex gap-10 p-5">
-      <li class=" text-2xl font-bold ">
-        <a href="/">Home</a>
+      <li class="text-2xl font-bold p-2 px-2">
+        <a class="<%= currPage == 'home' ? 'bg-amber-100' : 'hover:bg-blue-200' %> rounded-3xl py-3 px-8" href="/">airgnb</a>
       </li>
-      <li class="text-2xl font-bold hover:bg-amber-100"><a class="m-2" href="/host/add-home">Add Home</a></li>
+      <li class="text-2xl font-bold p-2 px-2">
+        <a class="<%= currPage == 'Home-list' ? 'bg-amber-100' : 'hover:bg-blue-200' %> rounded-3xl py-3 px-8" href="/homes">Home List</a>
+      </li>
+      <li class="text-2xl font-bold p-2">
+        <a class="<%= currPage == 'booking' ? 'bg-amber-100' : 'hover:bg-blue-200' %> rounded-3xl py-3 px-8"
+          href="/booking">Booking</a>
+      </li>
+      <li class="text-2xl font-bold p-2">
+        <a class="<%= currPage == 'favourites' ? 'bg-amber-100' : 'hover:bg-blue-200' %> rounded-3xl py-3 px-8"
+          href="/favourites">Favourites</a>
+      </li>
+      <li class="text-2xl font-bold p-2 ">
+        <a class="<%= currPage == 'add-home' ? 'bg-amber-100' : 'hover:bg-blue-200' %> rounded-3xl py-3 px-8" href="/host/add-home">AddHome</a>
+      </li>
+      <li class="text-2xl font-bold p-2 ">
+        <a class="<%= currPage == 'hostHomes' ? 'bg-amber-100' : 'hover:bg-blue-200' %> rounded-3xl py-3 px-8" href="/host/host-homes">Host Homes</a>
+      </li>
     </ul>
   </nav>
 </header>
