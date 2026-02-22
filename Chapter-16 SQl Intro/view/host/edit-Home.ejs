@@ -1,0 +1,40 @@
+<%- include('../partials/head') %>
+
+  <body>
+    <%- include('../partials/nav') %>
+      <main
+        class="bg-amber-100 flex flex-col justify-center items-center m-auto max-w-2xl p-10 mt-32 rounded-lg shadow-lg">
+        <h4 class="text-amber-950 text-3xl font-bold mb-8">
+          <%= editing ? "Edit" : "Register" %> Home Details
+        </h4>
+        <form action="/host/<%= editing ? 'edit-home' : 'add-home'%>" method="POST" class="w-full max-w-md">
+          <div class="mb-6">
+            <input name="homeId" type="hidden" value="<%= editing ? home.homeid : '' %>" />
+            <input name="houseName" type="text" placeholder="Enter Home Name.."
+              value="<%= editing ? home.housename : '' %>"
+              class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-600" />
+            <input name="housePrice" type="text" placeholder="Enter Home Price.."
+              value="<%= editing ? home.houseprice : '' %>"
+              class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-600" />
+            <input name="houseRating" type="text" placeholder="Enter Home Ratting.."
+              value="<%= editing ? home.houseratting : '' %>"
+              class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-600" />
+            <input name="houseLocation" type="text" placeholder="Enter Home Location.."
+              value="<%= editing ? home.houselocation : '' %>"
+              class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-600" />
+            <input name="houseImg" type="text" placeholder="Choose image.."
+              value="<%= editing ? home.houseimg : '' %>"
+              class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-600" />
+            <textarea name="houseDescription" placeholder="Enter Home Description.."
+              class="w-full px-4 py-3 border-2 border-amber-300 rounded-lg focus:outline-none focus:border-amber-600" ><%= editing ? home.housedescription : '' %></textarea>
+          </div>
+
+          <button type="Submit"
+            class="w-full bg-amber-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-amber-700 transition">
+            <%= editing ? 'Edit Home' : 'Add Home' %>
+          </button>
+        </form>
+      </main>
+  </body>
+
+  </html>

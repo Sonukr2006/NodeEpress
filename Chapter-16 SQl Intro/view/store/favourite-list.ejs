@@ -1,0 +1,45 @@
+<%- include('../partials/head') %>
+
+    <body>
+        <%- include('../partials/nav') %>
+            <main
+                class="bg-amber-50 flex flex-col m-auto max-w-2xl justify-center items-center mt-32 p-8 rounded-lg shadow-lg">
+                <h3 class="text-amber-900 font-bold text-4xl mb-8">Welcome to Airbnb</h3>
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <% homes.forEach(function(home){ %>
+                        <div
+                            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+                            <div class="relative isolate h-48 overflow-hidden bg-gray-200">
+                                <div class="flex justify-end">
+                                    <form action="/delete-favourite/<%= home.homeId %>" method="post">
+                                        <!-- <input type="hidden" name="homeId" value="<%= home.homeId %>" /> -->
+                                        <button class="hover:text-white right-0">Remove</button>
+                                    </form>
+                                </div>
+                                <img src="<%= home.houseImg %>"
+                                    class="absolute inset-0 -z-10 size-full object-cover object-right md:object-center" />
+                            </div>
+                            <div class="p-6 space-y-4">
+                                <h3 class="text-xl font-bold text-gray-800">
+                                    <%= home.houseName %>
+                                </h3>
+                                <p class="text-amber-600 font-semibold text-2xl">$<%= home.housePrice %><span
+                                            class="text-sm text-gray-500">/night</span></p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-gray-600">📍 <%= home.houseLocation %></span>
+                                    <span
+                                        class="bg-amber-100 text-amber-900 px-3 py-1 rounded-full text-sm font-semibold">⭐
+                                        <%= home.houseRating %></span>
+                                </div>
+                                <button
+                                    class="w-full mt-2 bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200">
+                                    Select Property
+                                </button>
+                            </div>
+                        </div>
+                        <% }); %>
+                </div>
+            </main>
+    </body>
+
+    </html>
