@@ -20,9 +20,12 @@
                 <span class="text-sm text-gray-600">📍 <%= home.houseLocation %></span>
                 <span class="bg-amber-100 text-amber-900 px-3 py-1 rounded-full text-sm font-semibold">⭐ <%= home.houseRating %></span>
                 </div>
-                <button class="w-full mt-2 bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200">
-                Select Property
-                </button>
+                <div class="flex justify-between">
+                    <%- include('../partials/favrouite', {home : home}) %>
+                    <a href="/homes/<%= home.homeId %>" class="w-1/2 mt-2 bg-red-500 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200">
+                    Details
+                    </a>
+                </div>
             </div>
             </div>
             <% }); %>

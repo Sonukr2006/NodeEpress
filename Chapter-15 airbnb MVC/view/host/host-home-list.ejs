@@ -21,12 +21,14 @@
                 <span class="bg-amber-100 text-amber-900 px-3 py-1 rounded-full text-sm font-semibold">⭐ <%= home.houseRating %></span>
                 </div>
                 <div class="flex gap-2">
-                    <button class="w-1/2 mt-2 bg-cyan-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200">
+                    <a href="/host/edit-home/<%= home.homeId %>?editing=true" class="w-1/2 mt-2 bg-cyan-600 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200">
                     Edit
-                    </button>
-                    <button class="w-1/2 mt-2 bg-red-500 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200">
-                    Delete
-                    </button>
+                    </a>
+                    <form class="w-1/2" action="/host/delete-home/<%= home.homeId %>" method="post">
+                        <button type="submit" class="w-full mt-2 bg-red-500 hover:bg-amber-700 text-white font-bold py-3 px-4 rounded-lg transition-colors duration-200">
+                        Delete
+                        </button>
+                    </form>
                 </div>
             </div>
             </div>
